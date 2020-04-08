@@ -1,3 +1,40 @@
 <resources>
     <string name="app_name">C0777245_W2020_MAD3125_MidTerm</string>
+    <string name="employment_status">Employment Status</string>
+    <string name="enter_first_name">Enter First Name</string>
+    <string name="enter_last_name">Enter Last Name</string>
+    <string name="complaint_filing_system">Complaint Filing System</string>
+    <string name="save">Save</string>
+    <string name="designation">Designation</string>
+    <string name="unit_no">Unit no.</string>
+    <string name="street_no">Street No.</string>
+    <string name="street_name">Street Name</string>
+    <string name="city">City</string>
+    <string name="country">Country</string>
+    <string name="province">Province</string>
+    <string name="email">Email</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="date">Date</string>
+    <string name="network_issue">NI</string>
+    <string name="system_crashing">SC</string>
+    <string name="slow_internet">SI</string>
+    <string name="software_installation">ST</string>
+    <string name="complaint_filed">Complaint Filed</string>
+    <string name="clear">Clear</string>
+    <array name="suffixArray">
+        <item>Mr.</item>
+        <item>Mrs.</item>
+        <item>Ms.</item>
+        <item>Miss.</item>
+        <item>Dr.</item>
+        <item>Sir.</item>
+        <item>Lord.</item>
+    </array>
+    <array name="countryCodes">
+        <item>"+91"</item>
+        <item>"+1"</item>
+        <item>"+93"</item>
+        <item>"+355"</item>
+        <item>"+213"</item>
+    </array>
 </resources>
