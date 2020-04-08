@@ -28,6 +28,7 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
     private TextView lastNameText;
     private Spinner genderSpinner;
     private TextView dateOfBirthText;
+    private TextView taxFilingDateText;
 
     long sin;
     String suffixTitle;
@@ -36,6 +37,8 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
     String gender;
     Date dateOfBirth;
     int age;
+    LocalDate taxFilledDate;
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,7 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         findById();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     private void findById(){
         sinTextView = findViewById(R.id.enterSINTextView);
         suffixTitleSpinner = findViewById(R.id.spinner);
@@ -50,7 +54,11 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         lastNameText = findViewById(R.id.enterLastNameTextView);
         genderSpinner = findViewById(R.id.genderCodeSpinner);
         dateOfBirthText = findViewById(R.id.enterDateTextView);
+        taxFilingDateText = findViewById(R.id.entertaxFilingDateTextView);
+        taxFilingDateText.setText(String.valueOf(LocalDate.now()));
         dateOfBirthText.setEnabled(false);
+        taxFilingDateText.setEnabled(false);
+        taxFilledDate = LocalDate.now();
     }
 
     private void suffix(){
@@ -123,7 +131,7 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
             dateOfBirthText.setError("Not eligible to file tax for current year");
         }
         else{
-            Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(age), Toast.LENGTH_SHORT).show();
+            Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(taxFilledDate), Toast.LENGTH_SHORT).show();
         }
 
 

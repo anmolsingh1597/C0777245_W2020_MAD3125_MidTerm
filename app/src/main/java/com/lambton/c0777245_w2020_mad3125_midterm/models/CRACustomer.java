@@ -1,6 +1,7 @@
 package com.lambton.c0777245_w2020_mad3125_midterm.models;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class CRACustomer implements Serializable
@@ -12,7 +13,7 @@ public class CRACustomer implements Serializable
     public Date birthDate;
     public String gender;
     public int age;
-    public Date taxFilingDate;
+    public LocalDate taxFilingDate;
     public double grossIncome;
     public double federalTax;
     public double provincialTax;
@@ -27,7 +28,7 @@ public class CRACustomer implements Serializable
     }
 
     public CRACustomer(long personSINNumber, String firstName, String lastName, String fullName,
-                       Date birthDate, String gender, int age, Date taxFilingDate, double grossIncome, double federalTax,
+                       Date birthDate, String gender, int age, LocalDate taxFilingDate, double grossIncome, double federalTax,
                        double provincialTax, double cpp, double ei, double rrspContributed, double carryForwardRRSP,
                        double totalTaxableIncome, double totalTaxPayed) {
         this.personSINNumber = personSINNumber;
@@ -105,11 +106,11 @@ public class CRACustomer implements Serializable
         this.age = age;
     }
 
-    public Date getTaxFilingDate() {
+    public LocalDate getTaxFilingDate() {
         return taxFilingDate;
     }
 
-    public void setTaxFilingDate(Date taxFilingDate) {
+    public void setTaxFilingDate(LocalDate taxFilingDate) {
         this.taxFilingDate = taxFilingDate;
     }
 
