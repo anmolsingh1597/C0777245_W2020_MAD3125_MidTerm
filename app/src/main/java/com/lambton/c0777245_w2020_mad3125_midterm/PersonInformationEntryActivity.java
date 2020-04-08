@@ -10,6 +10,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -82,7 +84,12 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
                         // set day of month , month and year value in the edit text
                         dateOfBirthText.setText(dayOfMonth + "/"
                                 + (monthOfYear + 1) + "/" + year);
-//                        dateOfBirth = (Date)String.valueOf(dateOfBirthText);
+                        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                        try {
+                            dateOfBirth = formatter.parse(dateOfBirthText.getText().toString());
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
 
                     }
                 }, mYear, mMonth, mDay);
@@ -99,7 +106,7 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
             lastNameText.setError("Enter Last Name");
             dateOfBirthText.setError("Invalid Date of Birth");*/
         }else{
-            Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(sin), Toast.LENGTH_SHORT).show();
+            Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(dateOfBirth), Toast.LENGTH_SHORT).show();
         }
 
 
