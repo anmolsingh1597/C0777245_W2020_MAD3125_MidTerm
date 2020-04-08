@@ -50,12 +50,22 @@ public class CalculatedTaxDisplayActivity extends AppCompatActivity {
         totalPayedText = findViewById(R.id.totalTaxPayedDisplayText);
 
 
-        sinText.setText("SIN: " + object.getPersonSINNumber() );
+        sinText.setText("SIN: " + object.getPersonSINNumber());
         fullNameText.setText("Full Name: " + object.getFullName());
         birthdateText.setText("Date of Birth: " + String.valueOf(object.getBirthDate()));
         genderText.setText("Gender: " + object.getGender());
-        ageText.setText("Age: " + String.valueOf(object.getAge()) +" years" );
+        ageText.setText("Age: " + String.valueOf(object.getAge()) +" years");
         taxFilingText.setText("Tax Filing Date: " + String.valueOf(object.getTaxFilingDate()));
+        grossIncomeText.setText("Gross Income: $" + String.valueOf(object.getGrossIncome()));
+        federalTaxText.setText("Federal Tax: $" + String.valueOf(object.getFederalTax()));
+        provisonalTaxText.setText("Provisional Tax: $" + String.valueOf(object.getProvincialTax()));
+        cppText.setText("CPP: $" + String.valueOf(object.getCpp()));
+        eiText.setText("EI: $" + String.valueOf(object.getEi()));
+        rrspContriText.setText("RRSP Contributed: $" + String.valueOf(object.getRrspContributed()));
+        carryForwardRRSPText.setText("Carry Forward RRSP: $" + String.valueOf(object.getCarryForwardRRSP()));
+        totalTaxableIncomeText.setText("Total Taxable Income: $" + String.valueOf(object.getTotalTaxableIncome()));
+        totalPayedText.setText("Total Tax Payed: $" + String.valueOf(object.getTotalTaxPayed()));
+
     }
 
 }
