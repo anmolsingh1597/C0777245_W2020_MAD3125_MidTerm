@@ -158,6 +158,10 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
             dateAlert();
         }else if (age <18){
             ageAlert();
+        }else if (grossIncomeText.getText().toString().equals("")){
+            grossIncomeText.setError("Enter Valid Values");
+        }else if (rrspText.getText().toString().equals("")){
+            rrspText.setError("Enter Valid Values");
         }
         else{
             Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(rrspContri), Toast.LENGTH_SHORT).show();
