@@ -160,14 +160,14 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         else{
             Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(rrspContri), Toast.LENGTH_SHORT).show();
         }
-
-
     }
     public void clear(View view){
         sinTextView.setText("");
         firstNameText.setText("");
         lastNameText.setText("");
         dateOfBirthText.setText("");
+        grossIncomeText.setText("");
+        rrspText.setText("");
     }
 }
 
