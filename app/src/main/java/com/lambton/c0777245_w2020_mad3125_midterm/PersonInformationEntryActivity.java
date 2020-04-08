@@ -29,6 +29,8 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
     private Spinner genderSpinner;
     private TextView dateOfBirthText;
     private TextView taxFilingDateText;
+    private TextView grossIncomeText;
+    private TextView rrspText;
 
     long sin;
     String suffixTitle;
@@ -38,6 +40,8 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
     Date dateOfBirth;
     int age;
     LocalDate taxFilledDate;
+    double grossIncomed;
+    double rrspContri;
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,9 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         genderSpinner = findViewById(R.id.genderCodeSpinner);
         dateOfBirthText = findViewById(R.id.enterDateTextView);
         taxFilingDateText = findViewById(R.id.entertaxFilingDateTextView);
+        grossIncomeText = findViewById(R.id.enterGrossIncomeTextView);
+        rrspText = findViewById(R.id.enterrrspTextView);
+
         taxFilingDateText.setText(String.valueOf(LocalDate.now()));
         dateOfBirthText.setEnabled(false);
         taxFilingDateText.setEnabled(false);
@@ -116,9 +123,29 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         datePickerDialog.show();
     }
 
+    private void grossIncome(){
+        String incomeModel = grossIncomeText.getText().toString();
+
+        if (incomeModel.equals("")){
+            grossIncomed = 0.0;
+        }else{
+        grossIncomed = Double.parseDouble(incomeModel);}
+    }
+
+    private void rrspContributed(){
+        String rrspModel = rrspText.getText().toString();
+
+        if (rrspModel.equals("")){
+            rrspContri = 0.0;
+        }else{
+            rrspContri = Double.parseDouble(rrspModel);}
+    }
+
     public void save(View view){
         suffix();
         genderFetch();
+        grossIncome();
+        rrspContributed();
         if (sinTextView.getText().toString().equals("")){
             sinTextView.setError("Enter SIN Number");
         }else if (firstNameText.getText().toString().equals("")){
@@ -131,7 +158,7 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
             dateOfBirthText.setError("Not eligible to file tax for current year");
         }
         else{
-            Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(taxFilledDate), Toast.LENGTH_SHORT).show();
+            Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(rrspContri), Toast.LENGTH_SHORT).show();
         }
 
 
