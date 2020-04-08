@@ -3,7 +3,9 @@ package com.lambton.c0777245_w2020_mad3125_midterm;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -153,7 +155,7 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         }else if ( lastNameText.getText().toString().equals("")){
             lastNameText.setError("Enter Last Name");
         }else if ( dateOfBirthText.getText().toString().equals("")){
-            dateOfBirthText.setError("Invalid Date of Birth");
+            dateAlert();
         }else if (age <18){
             dateOfBirthText.setError("Not eligible to file tax for current year");
         }
@@ -168,6 +170,56 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         dateOfBirthText.setText("");
         grossIncomeText.setText("");
         rrspText.setText("");
+    }
+
+    public void dateAlert(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Error");
+        builder.setIcon(R.drawable.ic_launcher_foreground);
+        builder.setMessage("Invalid date: Please Enter a valid date");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(PersonInformationEntryActivity.this,"Positive",Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(PersonInformationEntryActivity.this,"Negative",Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog homeAlert = builder.create();
+        homeAlert.show();
+    }
+
+    public void ageAlert(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Error");
+        builder.setIcon(R.drawable.ic_launcher_foreground);
+        builder.setMessage("Invalid date: Please Enter a valid date");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(PersonInformationEntryActivity.this,"Positive",Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(PersonInformationEntryActivity.this,"Negative",Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog homeAlert = builder.create();
+        homeAlert.show();
     }
 }
 
