@@ -30,11 +30,9 @@
         <item>Sir.</item>
         <item>Lord.</item>
     </array>
-    <array name="countryCodes">
-        <item>"+91"</item>
-        <item>"+1"</item>
-        <item>"+93"</item>
-        <item>"+355"</item>
-        <item>"+213"</item>
+    <array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
     </array>
 </resources>

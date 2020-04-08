@@ -341,18 +341,21 @@
     <Spinner
         android:id="@+id/countryCodeSpinner"
         android:layout_width="71dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="12dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="58dp"
         android:background="@drawable/btn_rounded_green_300"
-        android:entries="@array/countryCodes"
+        android:entries="@array/gender"
         android:popupBackground="@drawable/spinner_rounded_green_300"
         android:spinnerMode="dropdown"
         android:textAlignment="center"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
         android:textColor="@color/blue_grey_500"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/employmentStatusAutoComplete"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/mobileTextView"
@@ -438,16 +441,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
-        android:layout_marginTop="18dp"
         android:layout_marginEnd="17dp"
-        android:layout_marginBottom="122dp"
+        android:layout_marginBottom="136dp"
         android:onClick="dateImageButton"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toStartOf="@+id/dateTextView"
         app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countryCodeSpinner"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:drawable/ic_menu_my_calendar" />
 
     <CheckBox
