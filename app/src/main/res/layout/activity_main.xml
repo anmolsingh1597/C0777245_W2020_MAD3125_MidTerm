@@ -107,26 +107,26 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cityTextView"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="115dp"
+        android:layout_width="385dp"
         android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:hint="@string/city"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/rrsp_contributed"
         android:textColorHint="@color/green_300"
         app:boxStrokeColor="@color/green_300"
         app:boxStrokeErrorColor="@color/Red"
         app:hintTextColor="@color/green_300"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/streetNumberTextView"
-        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/unitNumberTextView"
-        app:layout_constraintVertical_bias="0.003"
+        app:layout_constraintVertical_bias="0.206"
         app:suffixTextColor="@color/Red">
         ​
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/enterCityTextView"
-            android:layout_width="115dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/blue_grey_500"
@@ -136,167 +136,33 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/unitNumberTextView"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="115dp"
+        android:layout_width="385dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
-        android:hint="@string/unit_no"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="312dp"
+        android:hint="@string/gross_income"
         android:textColorHint="@color/green_300"
         app:boxStrokeColor="@color/green_300"
         app:boxStrokeErrorColor="@color/Red"
         app:hintTextColor="@color/green_300"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/streetNumberTextView"
-        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateTextView"
         app:suffixTextColor="@color/Red">
         ​
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/enterUnitNumberTextView"
-            android:layout_width="115dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/blue_grey_500"
-            android:textSize="12sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/streetNamerTextView"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="115dp"
-        android:layout_height="60dp"
-        android:hint="@string/street_name"
-        android:textColorHint="@color/green_300"
-        app:boxStrokeColor="@color/green_300"
-        app:boxStrokeErrorColor="@color/Red"
-        app:hintTextColor="@color/green_300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:suffixTextColor="@color/Red">
-        ​
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enterStreetNameTextView"
-            android:layout_width="115dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/blue_grey_500"
-            android:textSize="12sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/streetNumberTextView"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="115dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:hint="@string/street_no"
-        android:textColorHint="@color/green_300"
-        app:boxStrokeColor="@color/green_300"
-        app:boxStrokeErrorColor="@color/Red"
-        app:hintTextColor="@color/green_300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/streetNamerTextView"
-        app:layout_constraintStart_toEndOf="@+id/unitNumberTextView"
-        app:suffixTextColor="@color/Red">
-        ​
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enterStreetNumberTextView"
-            android:layout_width="115dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/blue_grey_500"
-            android:textSize="12sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/countryTextView"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="115dp"
-        android:layout_height="60dp"
-        android:hint="@string/country"
-        android:textColorHint="@color/green_300"
-        app:boxStrokeColor="@color/green_300"
-        app:boxStrokeErrorColor="@color/Red"
-        app:hintTextColor="@color/green_300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/streetNumberTextView"
-        app:layout_constraintVertical_bias="0.003"
-        app:suffixTextColor="@color/Red">
-        ​
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enterCountryTextView"
-            android:layout_width="115dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/blue_grey_500"
-            android:textSize="12sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/provinceTextView"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="115dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:hint="@string/province"
-        android:textColorHint="@color/green_300"
-        app:boxStrokeColor="@color/green_300"
-        app:boxStrokeErrorColor="@color/Red"
-        app:hintTextColor="@color/green_300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/streetNamerTextView"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/unitNumberTextView"
-        app:layout_constraintTop_toBottomOf="@+id/streetNumberTextView"
-        app:layout_constraintVertical_bias="0.003"
-        app:suffixTextColor="@color/Red">
-        ​
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enterProvinceTextView"
-            android:layout_width="115dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/blue_grey_500"
-            android:textSize="12sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailTextView"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:hint="@string/email"
-        android:textColorHint="@color/green_300"
-        app:boxStrokeColor="@color/green_300"
-        app:boxStrokeErrorColor="@color/Red"
-        app:hintTextColor="@color/green_300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.231"
-        app:layout_constraintStart_toEndOf="@+id/spinner"
-        app:layout_constraintTop_toBottomOf="@+id/provinceTextView"
-        app:layout_constraintVertical_bias="0.028"
-        app:suffixTextColor="@color/Red">
-        ​
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enterEmailTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/blue_grey_500"
             android:textSize="12sp" />
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <Spinner
         android:id="@+id/countryCodeSpinner"
@@ -379,12 +245,13 @@
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:onClick="save"
         android:text="@string/save"
         android:textColor="@color/green_300"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.037"
+        app:layout_constraintHorizontal_bias="0.052"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
@@ -400,67 +267,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/countryCodeSpinner"
         app:srcCompat="@android:drawable/ic_menu_my_calendar" />
-
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:buttonTint="@color/green_300"
-        android:text="@string/network_issue"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="571dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:buttonTint="@color/green_300"
-        android:text="@string/software_installation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/checkBox2"
-        tools:layout_editor_absoluteY="571dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:buttonTint="@color/green_300"
-        android:text="@string/slow_internet"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/checkBox3"
-        tools:layout_editor_absoluteY="571dp" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:buttonTint="@color/green_300"
-        android:text="@string/system_crashing"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/checkBox4"
-        tools:layout_editor_absoluteY="571dp" />
-
-    <RatingBar
-        android:id="@+id/ratingBar"
-        style="@android:style/Widget.Material.RatingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="65dp"
-        android:progressTint="@color/green_300"
-        android:rating="0"
-        android:stepSize="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
 
     <Button
         android:id="@+id/button2"
