@@ -11,8 +11,8 @@ import com.lambton.c0777245_w2020_mad3125_midterm.models.CRACustomer;
 
 public class CalculatedTaxDisplayActivity extends AppCompatActivity {
 
-    private TextView sinText;
-
+    private TextView sinText, fullNameText, birthdateText, genderText, ageText, taxFilingText, grossIncomeText, federalTaxText;
+    private TextView provisonalTaxText, cppText, eiText, rrspContriText, carryForwardRRSPText, totalTaxableIncomeText, totalPayedText;
     Bundle fetchedUser;
     CRACustomer object;
     @Override
@@ -34,7 +34,28 @@ public class CalculatedTaxDisplayActivity extends AppCompatActivity {
 
     public void intials(){
         sinText = findViewById(R.id.sinDisplayText);
+        fullNameText = findViewById(R.id.fullNameDisplayText);
+        birthdateText = findViewById(R.id.birthDateDisplayText);
+        genderText = findViewById(R.id.genderDisplayText);
+        ageText = findViewById(R.id.ageDisplayText);
+        taxFilingText = findViewById(R.id.taxFilingDateDisplayText);
+        grossIncomeText = findViewById(R.id.grossIncomeDisplayText);
+        federalTaxText = findViewById(R.id.federalTaxDisplayText);
+        provisonalTaxText = findViewById(R.id.provisionalTaxDisplayText);
+        cppText = findViewById(R.id.cppDisplayText);
+        eiText = findViewById(R.id.eiDisplayText);
+        rrspContriText = findViewById(R.id.rrspDisplayText);
+        carryForwardRRSPText = findViewById(R.id.carryForwardRRSPDisplayText);
+        totalTaxableIncomeText = findViewById(R.id.totalTaxableIncomeDisplayText);
+        totalPayedText = findViewById(R.id.totalTaxPayedDisplayText);
+
+
         sinText.setText("SIN: " + object.getPersonSINNumber() );
+        fullNameText.setText("Full Name: " + object.getFullName());
+        birthdateText.setText("Date of Birth: " + String.valueOf(object.getBirthDate()));
+        genderText.setText("Gender: " + object.getGender());
+        ageText.setText("Age: " + String.valueOf(object.getAge()) +" years" );
+        taxFilingText.setText("Tax Filing Date: " + String.valueOf(object.getTaxFilingDate()));
     }
 
 }
