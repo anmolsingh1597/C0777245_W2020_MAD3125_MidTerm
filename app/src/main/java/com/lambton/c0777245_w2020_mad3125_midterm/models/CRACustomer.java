@@ -50,6 +50,23 @@ public class CRACustomer implements Serializable
         this.totalTaxPayed = totalTaxPayed;
     }
 
+    public CRACustomer(long personSINNumber, String firstName, String lastName,Date birthDate,
+                       String gender, int age, LocalDate taxFilingDate, double grossIncome,double rrspContributed){
+
+        this.personSINNumber = personSINNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.fullName = lastName + " " + firstName;
+        this.birthDate = birthDate;
+        this.gender = gender;
+        this.age = age;
+        this.taxFilingDate = taxFilingDate;
+        this.grossIncome = grossIncome;
+        this.rrspContributed = rrspContributed;
+
+
+    }
+
     public long getPersonSINNumber() {
         return personSINNumber;
     }

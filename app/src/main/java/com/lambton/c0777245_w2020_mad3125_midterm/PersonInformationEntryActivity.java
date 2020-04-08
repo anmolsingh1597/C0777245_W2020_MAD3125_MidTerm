@@ -14,6 +14,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lambton.c0777245_w2020_mad3125_midterm.models.CRACustomer;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -44,6 +46,9 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
     LocalDate taxFilledDate;
     double grossIncomed;
     double rrspContri;
+
+    CRACustomer userEntry;
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -214,6 +219,10 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
 
         AlertDialog homeAlert = builder.create();
         homeAlert.show();
+    }
+
+    public void passingData(){
+        userEntry = new CRACustomer();
     }
 }
 
