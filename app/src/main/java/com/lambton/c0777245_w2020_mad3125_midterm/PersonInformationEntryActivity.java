@@ -94,11 +94,6 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
                         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                         try {
                             dateOfBirth = formatter.parse(dateOfBirthText.getText().toString());
-                            Calendar c = Calendar.getInstance();
-                            c.setTime(dateOfBirth);
-                            int currentYear = c.get(Calendar.YEAR);
-                            int currentMonth = c.get(Calendar.MONTH) + 1;
-                            int currentDate = c.get(Calendar.DATE);
                             LocalDate l1 = LocalDate.of(year, monthOfYear+1, dayOfMonth);
                             LocalDate now1 = LocalDate.now();
                             Period diff1 = Period.between(l1, now1);
@@ -116,15 +111,19 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         suffix();
         genderFetch();
         if (sinTextView.getText().toString().equals("") /* || ||
-                dateOfBirthText.getText().toString().equals("")*/){
+               )*/){
             sinTextView.setError("Enter SIN Number");
            /*
 
-            dateOfBirthText.setError("Invalid Date of Birth");*/
+            */
         }else if (firstNameText.getText().toString().equals("")){
             firstNameText.setError("Enter First Name");
         }else if ( lastNameText.getText().toString().equals("")){
             lastNameText.setError("Enter Last Name");
+        }else if ( dateOfBirthText.getText().toString().equals("")){
+            dateOfBirthText.setError("Invalid Date of Birth");
+        }else if (age <18){
+            dateOfBirthText.setError("Not eligible to file tax for current year");
         }
 
         else{
