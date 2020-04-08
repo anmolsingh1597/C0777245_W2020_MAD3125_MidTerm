@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.lambton.c0777245_w2020_mad3125_midterm.models.CRACustomer;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -169,7 +170,8 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
             rrspText.setError("Enter Valid Values");
         }
         else{
-            Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(rrspContri), Toast.LENGTH_SHORT).show();
+            passingData();
+            Toast.makeText(PersonInformationEntryActivity.this, "Data passed", Toast.LENGTH_SHORT).show();
         }
     }
     public void clear(View view){
@@ -222,7 +224,9 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
     }
 
     public void passingData(){
-        userEntry = new CRACustomer();
+        userEntry = new CRACustomer(sin,firstName,lastName,dateOfBirth,gender,age,taxFilledDate,grossIncomed,rrspContri);
+        Bundle userBundle = new Bundle();
+        userBundle.putSerializable("userBundle", (Serializable) userEntry);
     }
 }
 
