@@ -8,6 +8,7 @@
     android:theme="@style/Theme.MaterialComponents"
     tools:context=".PersonInformationEntryActivity">
 
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/firstNameTextView"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
@@ -21,10 +22,10 @@
         app:hintTextColor="@color/green_300"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.327"
+        app:layout_constraintHorizontal_bias="0.324"
         app:layout_constraintStart_toEndOf="@+id/spinner"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.081"
+        app:layout_constraintVertical_bias="0.146"
         app:suffixTextColor="@color/Red">
         ​
 
@@ -36,7 +37,6 @@
             android:textColor="@color/blue_grey_500"
             android:textSize="12sp" />
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/lastNameTextView"
@@ -51,10 +51,10 @@
         app:hintTextColor="@color/green_300"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.783"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toEndOf="@+id/firstNameTextView"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.081"
+        app:layout_constraintVertical_bias="0.146"
         app:suffixTextColor="@color/Red">
         ​
 
@@ -88,9 +88,9 @@
         android:layout_width="71dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="104dp"
         android:layout_marginEnd="330dp"
-        android:layout_marginBottom="594dp"
+        android:layout_marginBottom="29dp"
         android:background="@drawable/btn_rounded_green_300"
         android:entries="@array/suffixArray"
         android:popupBackground="@drawable/spinner_rounded_green_300"
@@ -99,17 +99,17 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
         android:textColor="@color/blue_grey_500"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/countryCodeSpinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <AutoCompleteTextView
         android:id="@+id/employmentStatusAutoComplete"
         android:layout_width="236dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
         android:hint="@string/employment_status"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
         android:textColor="@color/blue_grey_500"
@@ -117,25 +117,52 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/designationAutoComplete"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent" />
 
     <AutoCompleteTextView
         android:id="@+id/designationAutoComplete"
         android:layout_width="236dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="72dp"
         android:hint="@string/designation"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
         android:textColor="@color/blue_grey_500"
         android:textColorHint="@color/green_300"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.805"
+        app:layout_constraintHorizontal_bias="0.765"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameTextView"
-        app:layout_constraintVertical_bias="0.006" />
+        app:layout_constraintTop_toBottomOf="@+id/lastNameTextView" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cityTextView"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:hint="@string/city"
+        android:textColorHint="@color/green_300"
+        app:boxStrokeColor="@color/green_300"
+        app:boxStrokeErrorColor="@color/Red"
+        app:hintTextColor="@color/green_300"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/streetNumberTextView"
+        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unitNumberTextView"
+        app:layout_constraintVertical_bias="0.003"
+        app:suffixTextColor="@color/Red">
+        ​
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enterCityTextView"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@color/blue_grey_500"
+            android:textSize="12sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/unitNumberTextView"
@@ -153,12 +180,38 @@
         app:layout_constraintHorizontal_bias="0.037"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/designationAutoComplete"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.029"
         app:suffixTextColor="@color/Red">
         ​
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/enterUnitNumberTextView"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@color/blue_grey_500"
+            android:textSize="12sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/streetNamerTextView"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:hint="@string/street_name"
+        android:textColorHint="@color/green_300"
+        app:boxStrokeColor="@color/green_300"
+        app:boxStrokeErrorColor="@color/Red"
+        app:hintTextColor="@color/green_300"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/designationAutoComplete"
+        app:layout_constraintVertical_bias="0.029"
+        app:suffixTextColor="@color/Red">
+        ​
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enterStreetNameTextView"
             android:layout_width="115dp"
             android:layout_height="wrap_content"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
@@ -182,7 +235,7 @@
         app:layout_constraintEnd_toStartOf="@+id/streetNamerTextView"
         app:layout_constraintStart_toEndOf="@+id/unitNumberTextView"
         app:layout_constraintTop_toBottomOf="@+id/designationAutoComplete"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.029"
         app:suffixTextColor="@color/Red">
         ​
 
@@ -196,54 +249,24 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/streetNamerTextView"
+        android:id="@+id/countryTextView"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="115dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="8dp"
-        android:hint="@string/street_name"
+        android:hint="@string/country"
         android:textColorHint="@color/green_300"
         app:boxStrokeColor="@color/green_300"
         app:boxStrokeErrorColor="@color/Red"
         app:hintTextColor="@color/green_300"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/designationAutoComplete"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/streetNumberTextView"
+        app:layout_constraintVertical_bias="0.003"
         app:suffixTextColor="@color/Red">
         ​
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enterStreetNameTextView"
-            android:layout_width="115dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/blue_grey_500"
-            android:textSize="12sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cityTextView"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="115dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:hint="@string/city"
-        android:textColorHint="@color/green_300"
-        app:boxStrokeColor="@color/green_300"
-        app:boxStrokeErrorColor="@color/Red"
-        app:hintTextColor="@color/green_300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/streetNumberTextView"
-        app:layout_constraintHorizontal_bias="0.037"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/unitNumberTextView"
-        app:layout_constraintVertical_bias="0.0"
-        app:suffixTextColor="@color/Red">
-        ​
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enterCityTextView"
+            android:id="@+id/enterCountryTextView"
             android:layout_width="115dp"
             android:layout_height="wrap_content"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
@@ -265,9 +288,10 @@
         app:hintTextColor="@color/green_300"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/streetNamerTextView"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/unitNumberTextView"
         app:layout_constraintTop_toBottomOf="@+id/streetNumberTextView"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.003"
         app:suffixTextColor="@color/Red">
         ​
 
@@ -280,32 +304,6 @@
             android:textSize="12sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/countryTextView"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="115dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="8dp"
-        android:hint="@string/country"
-        android:textColorHint="@color/green_300"
-        app:boxStrokeColor="@color/green_300"
-        app:boxStrokeErrorColor="@color/Red"
-        app:hintTextColor="@color/green_300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/streetNumberTextView"
-        app:layout_constraintVertical_bias="0.0"
-        app:suffixTextColor="@color/Red">
-        ​
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/enterCountryTextView"
-            android:layout_width="115dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-            android:textColor="@color/blue_grey_500"
-            android:textSize="12sp" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailTextView"
@@ -321,10 +319,10 @@
         app:hintTextColor="@color/green_300"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.231"
         app:layout_constraintStart_toEndOf="@+id/spinner"
         app:layout_constraintTop_toBottomOf="@+id/provinceTextView"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.028"
         app:suffixTextColor="@color/Red">
         ​
 
@@ -337,13 +335,12 @@
             android:textSize="12sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <Spinner
         android:id="@+id/countryCodeSpinner"
         android:layout_width="71dp"
         android:layout_height="48dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="58dp"
         android:background="@drawable/btn_rounded_green_300"
         android:entries="@array/gender"
@@ -354,6 +351,7 @@
         android:textColor="@color/blue_grey_500"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/employmentStatusAutoComplete"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
@@ -362,19 +360,18 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:hint="@string/mobile_number"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="11dp"
+        android:hint="@string/sin"
         android:textColorHint="@color/green_300"
         app:boxStrokeColor="@color/green_300"
         app:boxStrokeErrorColor="@color/Red"
         app:hintTextColor="@color/green_300"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/firstNameTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toEndOf="@+id/spinner"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextView"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:suffixTextColor="@color/Red">
         ​
 
@@ -404,8 +401,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toEndOf="@+id/spinner"
-        app:layout_constraintTop_toBottomOf="@+id/mobileTextView"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextView"
+        app:layout_constraintVertical_bias="0.045"
         app:startIconCheckable="true"
         app:startIconTint="@color/green_400"
         app:suffixTextColor="@color/Red">
@@ -442,7 +439,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
         android:layout_marginEnd="17dp"
-        android:layout_marginBottom="136dp"
+        android:layout_marginBottom="112dp"
         android:onClick="dateImageButton"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toStartOf="@+id/dateTextView"
