@@ -172,7 +172,6 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         }
         else{
             passingData();
-            Toast.makeText(PersonInformationEntryActivity.this, "Data passed", Toast.LENGTH_SHORT).show();
         }
     }
     public void clear(View view){
