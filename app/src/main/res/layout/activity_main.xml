@@ -22,10 +22,10 @@
         app:hintTextColor="@color/green_300"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.324"
+        app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toEndOf="@+id/spinner"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.146"
+        app:layout_constraintVertical_bias="0.169"
         app:suffixTextColor="@color/Red">
         ​
 
@@ -51,10 +51,10 @@
         app:hintTextColor="@color/green_300"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/firstNameTextView"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.146"
+        app:layout_constraintVertical_bias="0.169"
         app:suffixTextColor="@color/Red">
         ​
 
@@ -85,9 +85,8 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="71dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="10dp"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
         android:layout_marginTop="104dp"
         android:layout_marginEnd="330dp"
         android:layout_marginBottom="29dp"
@@ -101,39 +100,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/countryCodeSpinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <AutoCompleteTextView
-        android:id="@+id/employmentStatusAutoComplete"
-        android:layout_width="236dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
-        android:hint="@string/employment_status"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-        android:textColor="@color/blue_grey_500"
-        android:textColorHint="@color/green_300"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/designationAutoComplete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <AutoCompleteTextView
-        android:id="@+id/designationAutoComplete"
-        android:layout_width="236dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:hint="@string/designation"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-        android:textColor="@color/blue_grey_500"
-        android:textColorHint="@color/green_300"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.765"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameTextView" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cityTextView"
@@ -179,8 +148,6 @@
         app:layout_constraintEnd_toStartOf="@+id/streetNumberTextView"
         app:layout_constraintHorizontal_bias="0.037"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/designationAutoComplete"
-        app:layout_constraintVertical_bias="0.029"
         app:suffixTextColor="@color/Red">
         ​
 
@@ -205,8 +172,6 @@
         app:hintTextColor="@color/green_300"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/designationAutoComplete"
-        app:layout_constraintVertical_bias="0.029"
         app:suffixTextColor="@color/Red">
         ​
 
@@ -234,8 +199,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/streetNamerTextView"
         app:layout_constraintStart_toEndOf="@+id/unitNumberTextView"
-        app:layout_constraintTop_toBottomOf="@+id/designationAutoComplete"
-        app:layout_constraintVertical_bias="0.029"
         app:suffixTextColor="@color/Red">
         ​
 
@@ -337,11 +300,9 @@
 
     <Spinner
         android:id="@+id/countryCodeSpinner"
-        android:layout_width="71dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="58dp"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/btn_rounded_green_300"
         android:entries="@array/gender"
         android:popupBackground="@drawable/spinner_rounded_green_300"
@@ -350,17 +311,15 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
         android:textColor="@color/blue_grey_500"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/employmentStatusAutoComplete"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/mobileTextView"
+        android:id="@+id/sinTextView"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="11dp"
         android:hint="@string/sin"
@@ -388,21 +347,19 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/dateTextView"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="60dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:hint="@string/date"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="35dp"
+        android:hint="@string/birthdate"
         android:textColorHint="@color/green_300"
         app:boxStrokeColor="@color/green_300"
         app:boxStrokeErrorColor="@color/Red"
         app:hintTextColor="@color/green_300"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toEndOf="@+id/spinner"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextView"
-        app:layout_constraintVertical_bias="0.045"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/firstNameTextView"
         app:startIconCheckable="true"
         app:startIconTint="@color/green_400"
         app:suffixTextColor="@color/Red">
@@ -428,9 +385,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.037"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employmentStatusAutoComplete"
-        app:layout_constraintVertical_bias="0.966" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -438,26 +393,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="112dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
         android:onClick="dateImageButton"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toStartOf="@+id/dateTextView"
-        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countryCodeSpinner"
         app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:buttonTint="@color/green_300"
+        android:text="@string/network_issue"
+        app:layout_constraintEnd_toStartOf="@+id/checkBox3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="571dp" />
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="@string/software_installation"
         android:buttonTint="@color/green_300"
+        android:text="@string/software_installation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/checkBox2"
-        app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
+        tools:layout_editor_absoluteY="571dp" />
 
     <CheckBox
         android:id="@+id/checkBox2"
@@ -468,30 +434,18 @@
         app:layout_constraintEnd_toStartOf="@+id/checkBox"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/checkBox3"
-        app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
+        tools:layout_editor_absoluteY="571dp" />
 
     <CheckBox
         android:id="@+id/checkBox3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/system_crashing"
         android:buttonTint="@color/green_300"
+        android:text="@string/system_crashing"
         app:layout_constraintEnd_toStartOf="@+id/checkBox2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/checkBox4"
-        app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
-
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/network_issue"
-        android:buttonTint="@color/green_300"
-        app:layout_constraintEnd_toStartOf="@+id/checkBox3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateTextView" />
+        tools:layout_editor_absoluteY="571dp" />
 
     <RatingBar
         android:id="@+id/ratingBar"

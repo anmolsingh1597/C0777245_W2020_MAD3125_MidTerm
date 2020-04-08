@@ -14,7 +14,7 @@
     <string name="province">Province</string>
     <string name="email">Email</string>
     <string name="sin">SIN</string>
-    <string name="date">Date</string>
+    <string name="birthdate">Date of Birth</string>
     <string name="network_issue">NI</string>
     <string name="system_crashing">SC</string>
     <string name="slow_internet">SI</string>
