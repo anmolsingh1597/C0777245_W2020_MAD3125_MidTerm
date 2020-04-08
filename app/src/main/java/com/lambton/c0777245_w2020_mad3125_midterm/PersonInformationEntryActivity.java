@@ -92,7 +92,17 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
     public void save(View view){
         suffix();
         genderFetch();
-        Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(sin), Toast.LENGTH_SHORT).show();
+        if (sinTextView.getText().toString().equals("") /*|| firstNameText.getText().toString().equals("") || lastNameText.getText().toString().equals("") ||
+                dateOfBirthText.getText().toString().equals("")*/){
+            sinTextView.setError("Enter SIN Number");
+           /* firstNameText.setError("Enter First Name");
+            lastNameText.setError("Enter Last Name");
+            dateOfBirthText.setError("Invalid Date of Birth");*/
+        }else{
+            Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(sin), Toast.LENGTH_SHORT).show();
+        }
+
+
     }
     public void clear(View view){
         Toast.makeText(PersonInformationEntryActivity.this, "Clear", Toast.LENGTH_SHORT).show();
