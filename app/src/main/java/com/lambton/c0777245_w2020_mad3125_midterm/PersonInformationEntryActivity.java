@@ -99,13 +99,19 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
     public void save(View view){
         suffix();
         genderFetch();
-        if (sinTextView.getText().toString().equals("") /*|| firstNameText.getText().toString().equals("") || lastNameText.getText().toString().equals("") ||
+        if (sinTextView.getText().toString().equals("") /* || ||
                 dateOfBirthText.getText().toString().equals("")*/){
             sinTextView.setError("Enter SIN Number");
-           /* firstNameText.setError("Enter First Name");
-            lastNameText.setError("Enter Last Name");
+           /*
+
             dateOfBirthText.setError("Invalid Date of Birth");*/
-        }else{
+        }else if (firstNameText.getText().toString().equals("")){
+            firstNameText.setError("Enter First Name");
+        }else if ( lastNameText.getText().toString().equals("")){
+            lastNameText.setError("Enter Last Name");
+        }
+
+        else{
             Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(dateOfBirth), Toast.LENGTH_SHORT).show();
         }
 
