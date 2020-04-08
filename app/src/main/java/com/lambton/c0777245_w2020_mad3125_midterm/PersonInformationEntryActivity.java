@@ -50,6 +50,7 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         lastNameText = findViewById(R.id.enterLastNameTextView);
         genderSpinner = findViewById(R.id.genderCodeSpinner);
         dateOfBirthText = findViewById(R.id.enterDateTextView);
+        dateOfBirthText.setEnabled(false);
     }
 
     private void suffix(){
@@ -110,12 +111,8 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
     public void save(View view){
         suffix();
         genderFetch();
-        if (sinTextView.getText().toString().equals("") /* || ||
-               )*/){
+        if (sinTextView.getText().toString().equals("")){
             sinTextView.setError("Enter SIN Number");
-           /*
-
-            */
         }else if (firstNameText.getText().toString().equals("")){
             firstNameText.setError("Enter First Name");
         }else if ( lastNameText.getText().toString().equals("")){
@@ -125,7 +122,6 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         }else if (age <18){
             dateOfBirthText.setError("Not eligible to file tax for current year");
         }
-
         else{
             Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(age), Toast.LENGTH_SHORT).show();
         }
@@ -133,7 +129,10 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
 
     }
     public void clear(View view){
-        Toast.makeText(PersonInformationEntryActivity.this, "Clear", Toast.LENGTH_SHORT).show();
+        sinTextView.setText("");
+        firstNameText.setText("");
+        lastNameText.setText("");
+        dateOfBirthText.setText("");
     }
 }
 
