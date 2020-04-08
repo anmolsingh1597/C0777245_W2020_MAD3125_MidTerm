@@ -157,7 +157,7 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         }else if ( dateOfBirthText.getText().toString().equals("")){
             dateAlert();
         }else if (age <18){
-            dateOfBirthText.setError("Not eligible to file tax for current year");
+            ageAlert();
         }
         else{
             Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(rrspContri), Toast.LENGTH_SHORT).show();
@@ -181,18 +181,9 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(PersonInformationEntryActivity.this,"Positive",Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(PersonInformationEntryActivity.this,"Negative",Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-            }
-        });
-
         AlertDialog homeAlert = builder.create();
         homeAlert.show();
     }
@@ -201,19 +192,18 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Error");
         builder.setIcon(R.drawable.ic_launcher_foreground);
-        builder.setMessage("Invalid date: Please Enter a valid date");
+        builder.setMessage("Not eligible to file tax for current year");
         builder.setCancelable(false);
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(PersonInformationEntryActivity.this,"Positive",Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Refill", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(PersonInformationEntryActivity.this,"Negative",Toast.LENGTH_SHORT).show();
+                dateOfBirthText.setText("");
                 dialog.dismiss();
             }
         });
