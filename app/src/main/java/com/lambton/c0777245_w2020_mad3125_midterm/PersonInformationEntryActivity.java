@@ -16,7 +16,7 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
     private TextView lastNameText;
     private Spinner genderSpinner;
 
-    String sin;
+    long sin;
     String suffixTitle;
     String firstName;
     String lastName;
@@ -38,7 +38,14 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
 
     private void suffix(){
 
-        sin = sinTextView.getText().toString();
+        String sinModel = sinTextView.getText().toString();
+
+        if (sinModel.equals("")){
+            sin = 0;
+        }else {
+            sin = Integer.parseInt(sinModel);
+        }
+
         int position = suffixTitleSpinner.getSelectedItemPosition();
         suffixTitle = String.valueOf(suffixTitleSpinner.getItemAtPosition(position));
         firstName = firstNameText.getText().toString();
@@ -58,7 +65,7 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
     public void save(View view){
         suffix();
         genderFetch();
-        Toast.makeText(PersonInformationEntryActivity.this, sin, Toast.LENGTH_SHORT).show();
+        Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(sin), Toast.LENGTH_SHORT).show();
     }
     public void clear(View view){
         Toast.makeText(PersonInformationEntryActivity.this, "Clear", Toast.LENGTH_SHORT).show();
