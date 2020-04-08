@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -227,6 +228,10 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         userEntry = new CRACustomer(sin,firstName,lastName,dateOfBirth,gender,age,taxFilledDate,grossIncomed,rrspContri);
         Bundle userBundle = new Bundle();
         userBundle.putSerializable("userBundle", (Serializable) userEntry);
+        Intent homeIntent = new Intent(PersonInformationEntryActivity.this,CalculatedTaxDisplayActivity.class);
+        homeIntent.putExtra("userObject", userBundle);
+        startActivity(homeIntent);
+
     }
 }
 
