@@ -1,8 +1,10 @@
 package com.lambton.c0777245_w2020_mad3125_midterm;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
@@ -12,6 +14,9 @@ import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -30,6 +35,7 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
     String lastName;
     String gender;
     Date dateOfBirth;
+    int age;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +84,7 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         datePickerDialog = new DatePickerDialog(PersonInformationEntryActivity.this,
                 new DatePickerDialog.OnDateSetListener() {
 
+                    @RequiresApi(api = Build.VERSION_CODES.O)
                     @Override
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
@@ -87,6 +94,15 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
                         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
                         try {
                             dateOfBirth = formatter.parse(dateOfBirthText.getText().toString());
+                            Calendar c = Calendar.getInstance();
+                            c.setTime(dateOfBirth);
+                            int currentYear = c.get(Calendar.YEAR);
+                            int currentMonth = c.get(Calendar.MONTH) + 1;
+                            int currentDate = c.get(Calendar.DATE);
+                            LocalDate l1 = LocalDate.of(year, monthOfYear+1, dayOfMonth);
+                            LocalDate now1 = LocalDate.now();
+                            Period diff1 = Period.between(l1, now1);
+                            age = diff1.getYears();
                         } catch (ParseException e) {
                             e.printStackTrace();
                         }
@@ -112,7 +128,7 @@ public class PersonInformationEntryActivity extends AppCompatActivity {
         }
 
         else{
-            Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(dateOfBirth), Toast.LENGTH_SHORT).show();
+            Toast.makeText(PersonInformationEntryActivity.this, String.valueOf(age), Toast.LENGTH_SHORT).show();
         }
 
 
