@@ -33,6 +33,7 @@
             android:id="@+id/enterFirstNameTextView"
             android:layout_width="115dp"
             android:layout_height="wrap_content"
+            android:inputType="textPersonName"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/blue_grey_500"
             android:textSize="12sp" />
@@ -62,6 +63,7 @@
             android:id="@+id/enterLastNameTextView"
             android:layout_width="115dp"
             android:layout_height="wrap_content"
+            android:inputType="textPersonName"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/blue_grey_500"
             android:textSize="12sp" />
@@ -98,7 +100,7 @@
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
         android:textColor="@color/blue_grey_500"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/countryCodeSpinner"
+        app:layout_constraintBottom_toTopOf="@+id/genderCodeSpinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -128,6 +130,7 @@
             android:id="@+id/enterCityTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/blue_grey_500"
             android:textSize="12sp" />
@@ -158,6 +161,7 @@
             android:id="@+id/enterUnitNumberTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/blue_grey_500"
             android:textSize="12sp" />
@@ -165,7 +169,7 @@
 
 
     <Spinner
-        android:id="@+id/countryCodeSpinner"
+        android:id="@+id/genderCodeSpinner"
         android:layout_width="115dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -204,6 +208,7 @@
             android:id="@+id/enterMobileTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/blue_grey_500"
             android:textSize="12sp"
@@ -235,6 +240,7 @@
             android:id="@+id/enterDateTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="date"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="@color/blue_grey_500"
             android:textSize="12sp" />
@@ -265,7 +271,7 @@
         android:onClick="dateImageButton"
         app:layout_constraintEnd_toStartOf="@+id/dateTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countryCodeSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/genderCodeSpinner"
         app:srcCompat="@android:drawable/ic_menu_my_calendar" />
 
     <Button
