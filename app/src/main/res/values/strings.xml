@@ -22,6 +22,7 @@
     <string name="complaint_filed">Complaint Filed</string>
     <string name="clear">Clear</string>
     <string name="tax_filing_date">Tax Filing Date</string>
+    <string name="tax_credentials">Tax Credentials</string>
     <array name="suffixArray">
         <item>Mr.</item>
         <item>Mrs.</item>

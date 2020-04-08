@@ -28,4 +28,5 @@ public class CalculatedTaxDisplayActivity extends AppCompatActivity {
             Toast.makeText(CalculatedTaxDisplayActivity.this, object.getFullName(), Toast.LENGTH_SHORT).show();
         }
     }
+
 }
