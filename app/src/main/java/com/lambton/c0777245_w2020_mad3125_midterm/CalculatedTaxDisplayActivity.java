@@ -66,7 +66,7 @@ public class CalculatedTaxDisplayActivity extends AppCompatActivity {
         taxFilingText.setText("Tax Filing Date: " + String.valueOf(object.getTaxFilingDate()));
         grossIncomeText.setText("Gross Income: " + defaultFormat.format(object.getGrossIncome()));
         federalTaxText.setText("Federal Tax: " + defaultFormat.format(object.getFederalTax()));
-        provisonalTaxText.setText("Provisional Tax: " + defaultFormat.format(object.getProvincialTax()));
+        provisonalTaxText.setText("Provincial Tax (Ontario) : " + defaultFormat.format(object.getProvincialTax()));
         cppText.setText("CPP: " + defaultFormat.format(object.getCpp()));
         eiText.setText("EI: " + defaultFormat.format(object.getEi()));
         rrspContriText.setText("RRSP Contributed: " + defaultFormat.format(object.getRrspContributed()));
