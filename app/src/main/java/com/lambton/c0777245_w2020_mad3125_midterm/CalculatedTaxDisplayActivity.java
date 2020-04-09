@@ -7,7 +7,12 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.DateFormat;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import com.lambton.c0777245_w2020_mad3125_midterm.models.CRACustomer;
 
@@ -31,7 +36,7 @@ public class CalculatedTaxDisplayActivity extends AppCompatActivity {
         if (intent.hasExtra("userObject")){
             fetchedUser = intent.getBundleExtra("userObject");
             object = (CRACustomer) fetchedUser.getSerializable("userBundle");
-            Toast.makeText(CalculatedTaxDisplayActivity.this, String.valueOf(object.getMaxRRSP()), Toast.LENGTH_SHORT).show();
+//            Toast.makeText(CalculatedTaxDisplayActivity.this, String.valueOf(object.getBirthDate()), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -55,7 +60,7 @@ public class CalculatedTaxDisplayActivity extends AppCompatActivity {
 
         sinText.setText("SIN: " + object.getPersonSINNumber());
         fullNameText.setText("Full Name: " + object.getFullName());
-        birthdateText.setText("Date of Birth: " + String.valueOf(object.getBirthDate()));
+        birthdateText.setText("Date of Birth: " + dateToString(object.getBirthDate()));
         genderText.setText("Gender: " + object.getGender());
         ageText.setText("Age: " + String.valueOf(object.getAge()) +" years");
         taxFilingText.setText("Tax Filing Date: " + String.valueOf(object.getTaxFilingDate()));
@@ -76,5 +81,11 @@ public class CalculatedTaxDisplayActivity extends AppCompatActivity {
         if (object.carryForwardRRSP<0.0){
             carryForwardRRSPText.setTextColor(Color.parseColor("#ff0000"));
         }
+    }
+
+    public String dateToString(Date date){
+        DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
+        String strDate = dateFormat.format(date);
+        return strDate;
     }
 }
