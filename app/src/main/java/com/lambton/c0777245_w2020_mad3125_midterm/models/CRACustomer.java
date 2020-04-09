@@ -145,7 +145,7 @@ public class CRACustomer implements Serializable
         if (getTotalTaxableIncome()<=12069){
             this.federalTax = 0.0;
         }else if(getTotalTaxableIncome()>=12069.01 && getTotalTaxableIncome()<=47630) {
-            this.federalTax =  (getTotalTaxableIncome() - 12069) * 0.15;
+            this.federalTax = 0.0 + (getTotalTaxableIncome() - 12069.01) * 0.15;
         }else if(getTotalTaxableIncome()>=47630.01 && getTotalTaxableIncome()<=95259) {
             this.federalTax = 0.0 + (35560.99 * 0.15) + ((getTotalTaxableIncome()-47630.01) * 0.2050);
         }else if(getTotalTaxableIncome()>=95259.01 && getTotalTaxableIncome()<=147667){
@@ -165,6 +165,22 @@ public class CRACustomer implements Serializable
     }
 
     public double getProvincialTax() {
+
+        if (getTotalTaxableIncome()<=10582){
+            this.provincialTax = 0.0;
+        }else if(getTotalTaxableIncome()>=10582.01 && getTotalTaxableIncome()<=43906) {
+            this.provincialTax = 0.0 + (getTotalTaxableIncome() - 10582.01) * 0.0505;
+        }else if(getTotalTaxableIncome()>=43906.01 && getTotalTaxableIncome()<=87813) {
+            this.provincialTax = 0.0 + (33323.99 * 0.0505) + ((getTotalTaxableIncome()-43906.01) * 0.0915);
+        }else if(getTotalTaxableIncome()>=87813.01 && getTotalTaxableIncome()<=150000){
+            this.provincialTax = 0.0 + (33323.99 * 0.0505) + (43906.99 * 0.0915) + ((getTotalTaxableIncome()-87813.01) * 0.1116 );
+        }else if(getTotalTaxableIncome()>=150000.01 && getTotalTaxableIncome()<=220000){//
+            this.provincialTax = 0.0 + + (33323.99 * 0.0505) + (43906.99 * 0.0915) + (62186.99 * 0.1116) + ((getTotalTaxableIncome()-150000.01) * 0.1216);
+        }
+        else {
+            this.provincialTax = 0.0 + + (33323.99 * 0.0505) + (43906.99 * 0.0915) + (62186.99 * 0.1116) + (69999.99 * 0.1216) + ((getTotalTaxableIncome()-220000.01) * 0.1316);
+        }
+
         return provincialTax;
     }
 
