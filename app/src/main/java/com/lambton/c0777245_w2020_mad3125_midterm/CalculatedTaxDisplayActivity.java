@@ -3,6 +3,7 @@ package com.lambton.c0777245_w2020_mad3125_midterm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -65,9 +66,15 @@ public class CalculatedTaxDisplayActivity extends AppCompatActivity {
         eiText.setText("EI: " + defaultFormat.format(object.getEi()));
         rrspContriText.setText("RRSP Contributed: " + defaultFormat.format(object.getRrspContributed()));
         carryForwardRRSPText.setText("Carry Forward RRSP: " + defaultFormat.format(object.getCarryForwardRRSP()));
+        setColor();
         totalTaxableIncomeText.setText("Total Taxable Income: " + defaultFormat.format(object.getTotalTaxableIncome()));
         totalPayedText.setText("Total Tax Payed: " + defaultFormat.format(object.getTotalTaxPayed()));
 
     }
 
+    public void setColor(){
+        if (object.carryForwardRRSP<0.0){
+            carryForwardRRSPText.setTextColor(Color.parseColor("#ff0000"));
+        }
+    }
 }
