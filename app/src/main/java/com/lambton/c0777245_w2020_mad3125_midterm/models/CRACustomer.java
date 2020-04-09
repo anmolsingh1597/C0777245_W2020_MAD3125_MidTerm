@@ -142,6 +142,20 @@ public class CRACustomer implements Serializable
     }
 
     public double getFederalTax() {
+//            double federalModel;
+        if (getTotalTaxableIncome()<=12069){
+            this.federalTax = 0.0;
+        }else if(getTotalTaxableIncome()>=12069.01 && getTotalTaxableIncome()<=47630) {
+            this.federalTax =  (getTotalTaxableIncome() - 12069) * 0.15;
+        }else if(getTotalTaxableIncome()>=47630.01 && getTotalTaxableIncome()<=95259) {
+            this.federalTax = 0.0 + (35560.99 * 0.15) + ((getTotalTaxableIncome()-47630.01) * 0.2050);
+        }else if(getTotalTaxableIncome()>=95259.01 && getTotalTaxableIncome()<=147667){
+            this.federalTax = 0.0 + (35560.99 * 0.15) + (47628.99 * 0.2050) + ((getTotalTaxableIncome()-95259.01) * 0.26 );
+        }
+        else {
+            this.federalTax = 10000.000;
+        }
+
         return federalTax;
     }
 
