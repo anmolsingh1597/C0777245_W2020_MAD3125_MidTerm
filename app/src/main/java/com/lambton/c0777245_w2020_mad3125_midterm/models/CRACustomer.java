@@ -58,7 +58,7 @@ public class CRACustomer implements Serializable
         this.personSINNumber = personSINNumber;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.fullName = lastName + " " + firstName;
+        this.fullName = lastName.toUpperCase() + " " + firstName;
         this.birthDate = birthDate;
         this.gender = gender;
         this.age = age;
