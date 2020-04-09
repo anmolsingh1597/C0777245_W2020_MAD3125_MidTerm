@@ -142,7 +142,6 @@ public class CRACustomer implements Serializable
     }
 
     public double getFederalTax() {
-//            double federalModel;
         if (getTotalTaxableIncome()<=12069){
             this.federalTax = 0.0;
         }else if(getTotalTaxableIncome()>=12069.01 && getTotalTaxableIncome()<=47630) {
@@ -151,9 +150,11 @@ public class CRACustomer implements Serializable
             this.federalTax = 0.0 + (35560.99 * 0.15) + ((getTotalTaxableIncome()-47630.01) * 0.2050);
         }else if(getTotalTaxableIncome()>=95259.01 && getTotalTaxableIncome()<=147667){
             this.federalTax = 0.0 + (35560.99 * 0.15) + (47628.99 * 0.2050) + ((getTotalTaxableIncome()-95259.01) * 0.26 );
+        }else if(getTotalTaxableIncome()>=147667.01 && getTotalTaxableIncome()<=210371){
+            this.federalTax = 0.0 + + (35560.99 * 0.15) + (47628.99 * 0.2050) + (52407.99 * 0.26) + ((getTotalTaxableIncome()-147667.01) * 0.29);
         }
         else {
-            this.federalTax = 10000.000;
+            this.federalTax = 0.0 + + (35560.99 * 0.15) + (47628.99 * 0.2050) + (52407.99 * 0.26) + (62703.99 * 0.29) + ((getTotalTaxableIncome()-210371.01) * 0.33);
         }
 
         return federalTax;
