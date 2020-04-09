@@ -233,6 +233,8 @@ public class CRACustomer implements Serializable
     }
 
     public double getTotalTaxPayed() {
+
+        this.totalTaxPayed = getFederalTax() + getProvincialTax();
         return totalTaxPayed;
     }
 
