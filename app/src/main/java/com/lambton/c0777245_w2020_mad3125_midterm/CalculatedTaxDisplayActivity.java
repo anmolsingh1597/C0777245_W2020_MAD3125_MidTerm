@@ -28,7 +28,7 @@ public class CalculatedTaxDisplayActivity extends AppCompatActivity {
         if (intent.hasExtra("userObject")){
             fetchedUser = intent.getBundleExtra("userObject");
             object = (CRACustomer) fetchedUser.getSerializable("userBundle");
-            Toast.makeText(CalculatedTaxDisplayActivity.this, object.getFullName(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(CalculatedTaxDisplayActivity.this, String.valueOf(object.getMaxRRSP()), Toast.LENGTH_SHORT).show();
         }
     }
 

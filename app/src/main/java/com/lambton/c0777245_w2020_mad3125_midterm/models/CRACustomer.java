@@ -23,6 +23,8 @@ public class CRACustomer implements Serializable
     public double carryForwardRRSP;
     public double totalTaxableIncome;
     public double totalTaxPayed;
+    public double maxRRSP;
+
 
     public CRACustomer() {
     }
@@ -194,7 +196,21 @@ public class CRACustomer implements Serializable
     }
 
     public double getCarryForwardRRSP() {
+
+
+        double rrspContri = this.rrspContributed;
+
+        this.carryForwardRRSP = getMaxRRSP() - rrspContri;
+
         return carryForwardRRSP;
+    }
+    public double getMaxRRSP() {
+        this.maxRRSP = this.grossIncome * 0.18;
+        return maxRRSP;
+    }
+
+    public void setMaxRRSP(double maxRRSP) {
+        this.maxRRSP = maxRRSP;
     }
 
     public void setCarryForwardRRSP(double carryForwardRRSP) {
@@ -202,6 +218,13 @@ public class CRACustomer implements Serializable
     }
 
     public double getTotalTaxableIncome() {
+
+        if (getRrspContributed()>getMaxRRSP()){
+            this.totalTaxableIncome = getGrossIncome()-(getCpp()+getEi()+getMaxRRSP());
+        }else{
+            this.totalTaxableIncome = getGrossIncome()-(getCpp()+getEi()+getRrspContributed());
+        }
+
         return totalTaxableIncome;
     }
 
