@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.text.NumberFormat;
 
 import com.lambton.c0777245_w2020_mad3125_midterm.models.CRACustomer;
 
@@ -15,6 +16,7 @@ public class CalculatedTaxDisplayActivity extends AppCompatActivity {
     private TextView provisonalTaxText, cppText, eiText, rrspContriText, carryForwardRRSPText, totalTaxableIncomeText, totalPayedText;
     Bundle fetchedUser;
     CRACustomer object;
+    NumberFormat defaultFormat = NumberFormat.getCurrencyInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,15 +58,15 @@ public class CalculatedTaxDisplayActivity extends AppCompatActivity {
         genderText.setText("Gender: " + object.getGender());
         ageText.setText("Age: " + String.valueOf(object.getAge()) +" years");
         taxFilingText.setText("Tax Filing Date: " + String.valueOf(object.getTaxFilingDate()));
-        grossIncomeText.setText("Gross Income: $" + String.valueOf(object.getGrossIncome()));
-        federalTaxText.setText("Federal Tax: $" + String.valueOf(object.getFederalTax()));
-        provisonalTaxText.setText("Provisional Tax: $" + String.valueOf(object.getProvincialTax()));
-        cppText.setText("CPP: $" + String.valueOf(object.getCpp()));
-        eiText.setText("EI: $" + String.valueOf(object.getEi()));
-        rrspContriText.setText("RRSP Contributed: $" + String.valueOf(object.getRrspContributed()));
-        carryForwardRRSPText.setText("Carry Forward RRSP: $" + String.valueOf(object.getCarryForwardRRSP()));
-        totalTaxableIncomeText.setText("Total Taxable Income: $" + String.valueOf(object.getTotalTaxableIncome()));
-        totalPayedText.setText("Total Tax Payed: $" + String.valueOf(object.getTotalTaxPayed()));
+        grossIncomeText.setText("Gross Income: " + defaultFormat.format(object.getGrossIncome()));
+        federalTaxText.setText("Federal Tax: " + defaultFormat.format(object.getFederalTax()));
+        provisonalTaxText.setText("Provisional Tax: " + defaultFormat.format(object.getProvincialTax()));
+        cppText.setText("CPP: " + defaultFormat.format(object.getCpp()));
+        eiText.setText("EI: " + defaultFormat.format(object.getEi()));
+        rrspContriText.setText("RRSP Contributed: " + defaultFormat.format(object.getRrspContributed()));
+        carryForwardRRSPText.setText("Carry Forward RRSP: " + defaultFormat.format(object.getCarryForwardRRSP()));
+        totalTaxableIncomeText.setText("Total Taxable Income: " + defaultFormat.format(object.getTotalTaxableIncome()));
+        totalPayedText.setText("Total Tax Payed: " + defaultFormat.format(object.getTotalTaxPayed()));
 
     }
 
